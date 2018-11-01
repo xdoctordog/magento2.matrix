@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="DoctorDogg\TutorialProxyTestbedCommand" xsi:type="object" >Doctordogg\HelloWorldVMMV\Command\Testbed</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Doctordogg\HelloWorldVMMV\Model\Container">
+        <arguments>
+            <argument name="slowLoaded" xsi:type="object">Doctordogg\HelloWorldVMMV\Model\SlowLoaded\Proxy</argument>
+        </arguments>
+    </type>
+    <preference for="Doctordogg\HelloWorldVMMV\Api\HelloInterface" type="Doctordogg\HelloWorldVMMV\Model\Hello" />
+</config>

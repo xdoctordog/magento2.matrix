@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="additional"/>
+    <head>
+        <!--<remove src="css/styles-m.css"/>-->
+        <!--<remove src="css/styles-s.css"/>-->
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="doctordogg.ui.component"
+            template="Doctordogg_HelloWorldVMMV::ui_component.phtml" />
+
+            <!--<uiComponent name="doctordogg-ui-component"/>-->
+        </referenceContainer>
+        <referenceContainer name="page.top">
+            <container name="doctor.dogg.temp.container" htmlTag="div" after="doctordogg_helloworld_mvvm">
+                <block class="Magento\Checkout\Block\Cart\Sidebar" name="minicart.dd" as="minicart.dds" template="Magento_Checkout::cart/minicart.phtml">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="types" xsi:type="array"/>
+                            <item name="components" xsi:type="array">
+                                <item name="minicart_content" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Checkout/js/view/minicart</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">Magento_Checkout/minicart/content</item>
+                                    </item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="subtotal.container" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="displayArea" xsi:type="string">subtotalContainer</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="subtotal" xsi:type="array">
+                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">Magento_Checkout/minicart/subtotal</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="extra_info" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="displayArea" xsi:type="string">extraInfo</item>
+                                            </item>
+                                        </item>
+                                        <item name="promotion" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="displayArea" xsi:type="string">promotion</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                    <container name="minicart.addons" label="Mini-cart promotion block"/>
+                </block>
+            </container>
+            <block class="Doctordogg\HelloWorldVMMV\Block\Main" name="doctordogg_helloworld_mvvm" alias="doctordogg_helloworld_mvvm_alias" after="-" template="content.phtml">
+                <arguments>
+                    <argument name="nickname" xsi:type="string">Boom Hauer from XML</argument>
+                </arguments>
+                <action method="light">
+                    <argument name="status" translate="true" xsi:type="string">WOW XML!</argument>
+                </action>
+            </block>
+
+            <container name="doctor.dogg.temp.container.b" htmlTag="div" htmlClass="doctor-dogg-temp-container-b">
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="doctordogg_helloworld_mvvm" display="true" remove="false">
+            <arguments>
+                <argument name="nickname" xsi:type="string">referenceBlock</argument>
+            </arguments>
+        </referenceBlock>
+
+        <move element="minicart.dd" destination="doctor.dogg.temp.container.b" before="-" />
+
+    </body>
+</page>

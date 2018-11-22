@@ -1,0 +1,20 @@
+
+<h1>UI HEeader</h1>
+<div data-bind="scope: 'doctordogg-ui-component'">
+    <h2 data-bind="text: title"></h2>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "doctordogg-ui-component": {
+                        "component": "Doctordogg_HelloWorldVMMV/js/doctordogg-ui-component",
+                        "title": "UI COMPONENT is ready!"
+                    }
+                }
+            }
+        }
+    }
+</script>

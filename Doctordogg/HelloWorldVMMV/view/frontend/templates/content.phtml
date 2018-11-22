@@ -1,7 +1,10 @@
+
 <h1>CONTENT.PHTML</h1>
 <h2>Hello <?php echo $this->getName();?>, </h2>
 
+<h2><?= /* @escapeNotVerified */ $this->escapeHtml($this->getMessage());?></h2>
+<h2><?= /* @escapeNotVerified */ $this->escapeHtml( $this->getGoodByeMessage());?></h2>
 
+<h2><?= /* @escapeNotVerified */ $this->escapeHtml( $this->getNickname());?></h2>
 
-<h2><?php echo $this->escapeHtml($this->getMessage());?></h2>
-<h2><?php echo $this->escapeHtml( $this->getGoodByeMessage());?></h2>
+<h2>Light Status: <?= /* @escapeNotVerified */ $this->escapeHtml( $this->getLightStatus());?></h2>

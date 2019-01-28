@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>E-mail Form</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Doctordogg\HelloWorldVMMV\Block\Email\Showform" name="helloworldvmmv_email_showform" template="Doctordogg_HelloWorldVMMV::helloworldvmmv_email_showform.phtml" />
+        </referenceContainer>
+    </body>
+</page>

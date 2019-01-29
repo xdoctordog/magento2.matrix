@@ -1,6 +1,6 @@
 <?php
 
-namespace Doctordogg\HelloWorldVMMV\Controller\Email;
+namespace Doctordogg\HelloWorldVMMV\Block\Email;
 
 class Showform extends \Magento\Framework\View\Element\Template {
 

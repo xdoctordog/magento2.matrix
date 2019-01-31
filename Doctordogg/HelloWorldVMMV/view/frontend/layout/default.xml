@@ -60,7 +60,7 @@
                     <container name="minicart.addons" label="Mini-cart promotion block"/>
                 </block>
             </container>
-            <block class="Doctordogg\HelloWorldVMMV\Block\Main" name="doctordogg_helloworld_mvvm" alias="doctordogg_helloworld_mvvm_alias" after="-" template="content.phtml">
+            <block class="Doctordogg\HelloWorldVMMV\Block\Main" name="doctordogg_helloworld_mvvm" after="-" template="content.phtml">
                 <arguments>
                     <argument name="nickname" xsi:type="string">Boom Hauer from XML</argument>
                 </arguments>
